@@ -1,5 +1,4 @@
 class Cancion{
-
     constructor(nombre, id, genero, artista, url)
     {
         this.nombre = nombre;
@@ -14,8 +13,10 @@ class Cancion{
         this.nombre = nombre;
         console.log("Nombre cambiado a: " + this.nombre);
     }   
-    getNombre(){
+    getNombre()
+    {
         console.log(this.nombre);
+        return this.nombre;
     }
     setId(id)
     {
@@ -31,21 +32,25 @@ class Cancion{
         this.genero = genero;
         console.log("Género cambiado a: " + this.genero);
     }
-    getGenero(){
+    getGenero()
+    {
         console.log(this.genero);
     }
     setArtista(artista){
         this.artista = artista;
         console.log("Artista cambiado a: " + this.artista);
     }
-    getArtista(){
+    getArtista()
+    {
         console.log(this.artista);
     }
-    setUrl(url){
+    setUrl(url)
+    {
         this.url = url;
         console.log("URL cambiada a: " + this.url);
     }
-    getUrl(){
+    getUrl()
+    {
         console.log(this.url);
     }
     //Devuelve true si esta reproduciendo, false en otro caso
@@ -85,18 +90,24 @@ class ListaDeReproduccion
     //Devuelve la longitud de la lista
     getSize()
     {
-        
+        console.log("El numero de canciones que tienes en tu cola es de "+this.lista.length+" canciones.");
     }
     shuffle()
     {
-        
+        console.log("Mezclando la lista...");
+        for (let i= this.lista.length-1; i>0 ; i--) //i la variable control, tiene el valor de la Longitud de la lista -1 pq el indice empieza en 0, y va de el indice mayor al menor para garantizar que el shuffle sea parejo y no agarre indices que ta hubiera agarrado
+        {
+            let j= Math.floor(Math.random()*(i+1)); // se hace el i++ debido a que como el random da un numero decimal entre 0 y 1 al multiplicarlo por i+1 se asegura que el numero sea valido y no se salga del rango de la lista
+            [this.lista[i], this.lista[j]] = [this.lista[j], this.lista[i]]; //Se intercambian los valores de i y j
+        }
+        console.log("Lista mezclada.");
     }
     //Devuelve la lista
     get()
     {
         for ( let i = 0; i < this.lista.length; i++)
         {
-            console.log("Cancion " + this.lista[i].getNombre());
+            this.lista[i].getNombre();
         }
     }
     fusionar(listaDeReproduccion)
@@ -129,15 +140,6 @@ canciones =
   new Cancion("La Bachata", 19, "Bachata", "Manuel Turizo", "https://www.youtube.com/watch?v=nEd7mXPQ688&pp=ygURbGEgYmFjaGF0YSBseXJpY3M%3D"),
   new Cancion("Lamento Boliviano", 20, "Rock", "Los Enanitos Verdes", "https://www.youtube.com/watch?v=_dRsmc8vDN0&pp=ygUYbGFtZW50byBib2xpdmlhbm8gbHlyaWNz"),
 ]
-let cancion1 = new Cancion("Bohemian Rhapsody", 1, "Rock", "Queen", "https://www.youtube.com/watch?v=yk3prd8GER4");
-/*cancion1.play();
-cancion1.estaReproduciendo();
-cancion1.stop();
-cancion1.estaReproduciendo();
-let borrados = canciones.splice(2,3);
-console.log(borrados);
-*/
-let lista = new ListaDeReproduccion(canciones);
-lista.pop(1);
-lista.push(new Cancion("Masked Dedede", 21, "Pop", "New Artist", "https://www.youtube.com/watch?v=example"));
-lista.get();
+let lista = new ListaDeReproduccion(canciones); // La lista que se nos proporciono en la clase
+lista.shuffle(); // Mezclamos la lista
+lista.get(); // Mostramos la lista mezclada
