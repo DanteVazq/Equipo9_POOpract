@@ -112,9 +112,10 @@ class ListaDeReproduccion
     }
     fusionar(listaDeReproduccion)
     {
-        //Visto en clase
+        this.lista = this.lista.concat(listaDeReproduccion.lista);
+        console.log("Listas fusionadas. Nueva lista de reproducción:");
+        this.get();
     }
-
 }
 
 canciones = 
@@ -140,6 +141,14 @@ canciones =
   new Cancion("La Bachata", 19, "Bachata", "Manuel Turizo", "https://www.youtube.com/watch?v=nEd7mXPQ688&pp=ygURbGEgYmFjaGF0YSBseXJpY3M%3D"),
   new Cancion("Lamento Boliviano", 20, "Rock", "Los Enanitos Verdes", "https://www.youtube.com/watch?v=_dRsmc8vDN0&pp=ygUYbGFtZW50byBib2xpdmlhbm8gbHlyaWNz"),
 ]
-let lista = new ListaDeReproduccion(canciones); // La lista que se nos proporciono en la clase
-lista.shuffle(); // Mezclamos la lista
-lista.get(); // Mostramos la lista mezclada
+
+let lista1 = new ListaDeReproduccion(canciones); // lista original
+
+let otrasCanciones =
+[
+  new Cancion("Song A", 21, "Pop", "Artista X", "https://..."),
+  new Cancion("Song B", 22, "Rock", "Artista Y", "https://...")
+];
+let lista2 = new ListaDeReproduccion(otrasCanciones); // Otra lista
+
+lista1.fusionar(lista2); // Fusiona lista2 en lista1
