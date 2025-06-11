@@ -1,77 +1,113 @@
 class Cancion{
 
-    constructor(nombre, id, genero, artista, url){
-        /*
-            Deben de asignar a los atributos que faltan de la clase Cancion como corresponda
-        */
+    constructor(nombre, id, genero, artista, url)
+    {
+        this.nombre = nombre;
+        this.id = id;
+        this.genero = genero;
+        this.artista = artista;
+        this.url = url;
         this.reproduciendo = false; 
     }
-
-    setNombre(nombre){
+    setNombre(nombre)
+    {
         this.nombre = nombre;
+        console.log("Nombre cambiado a: " + this.nombre);
     }   
     getNombre(){
-        return this.nombre;
+        console.log(this.nombre);
     }
-
-    /*
-        Deben de colocar los getters y setters que faltan
-    */
-    
-
+    setId(id)
+    {
+        this.id = id;
+        console.log("ID cambiado a: " + this.id);
+    }
+    getId()
+    {
+        console.log(this.id);
+    }
+    setGenero(genero)
+    {
+        this.genero = genero;
+        console.log("Género cambiado a: " + this.genero);
+    }
+    getGenero(){
+        console.log(this.genero);
+    }
+    setArtista(artista){
+        this.artista = artista;
+        console.log("Artista cambiado a: " + this.artista);
+    }
+    getArtista(){
+        console.log(this.artista);
+    }
+    setUrl(url){
+        this.url = url;
+        console.log("URL cambiada a: " + this.url);
+    }
+    getUrl(){
+        console.log(this.url);
+    }
     //Devuelve true si esta reproduciendo, false en otro caso
-    estaReproduciendo(){
-
+    estaReproduciendo()
+    {
+        console.log( this.reproduciendo );
     }
-
     //Cambia de no reproduciendo a reproduciendo
-    play(){
-        
+    play()
+    {
+        this.reproduciendo = true;
     }
-
     //Cambia de reproduciendo a no reproduciendo
-    stop(){
-        
+    stop()
+    {
+        this.reproduciendo = false;
     }
 }
-
-class ListaDeReproduccion{
-
-    constructor(arreglo){
-        this.lista = arreglo
+class ListaDeReproduccion
+{
+    constructor(arreglo)
+    {
+        this.lista = arreglo;
     }
-    
     //Elimína el elemento del índice y lo devuelve
-    pop(indice){
-        //Pista: Investiguen el método splice(inicio,numero_de_elementos_a_borrar) dentro del objeto Array
+    pop(indice)
+    {  /* Metodo que muestra una cancion y la elimina*/
+        let eliminado = this.lista.splice(indice-1, 1);
+        console.log("Canción eliminada: " + eliminado[0].nombre);
     }
-
     //Inserta un objeto canción dentro de la lista
-    push(objeto){
-        
+    push(objeto)
+    {
+        this.lista.push(objeto);
+        console.log("Canción añadida: " + objeto.nombre);
     }
-
     //Devuelve la longitud de la lista
-    getSize(){
+    getSize()
+    {
         
     }
-    
-    shuffle(){
-        //Visto en clase
+    shuffle()
+    {
+        
     }
-
     //Devuelve la lista
-    get(){
-        
+    get()
+    {
+        for ( let i = 0; i < this.lista.length; i++)
+        {
+            console.log("Cancion " + this.lista[i].getNombre());
+        }
     }
-
-    fusionar(listaDeReproduccion){
+    fusionar(listaDeReproduccion)
+    {
         //Visto en clase
     }
 
 }
 
-canciones = [ 
+canciones = 
+[ 
   new Cancion("Bohemian Rhapsody", 1, "Rock", "Queen", "https://www.youtube.com/watch?v=yk3prd8GER4"),
   new Cancion("Billie Jean", 2, "Pop", "Michael Jackson", "https://www.youtube.com/watch?v=DKFS2tDsZRY"),
   new Cancion("Still D.R.E.", 3, "Hip Hop", "Dr. Dre ft. Snoop Dogg", "https://www.youtube.com/watch?v=BaFF4OkLOss"),
@@ -93,5 +129,15 @@ canciones = [
   new Cancion("La Bachata", 19, "Bachata", "Manuel Turizo", "https://www.youtube.com/watch?v=nEd7mXPQ688&pp=ygURbGEgYmFjaGF0YSBseXJpY3M%3D"),
   new Cancion("Lamento Boliviano", 20, "Rock", "Los Enanitos Verdes", "https://www.youtube.com/watch?v=_dRsmc8vDN0&pp=ygUYbGFtZW50byBib2xpdmlhbm8gbHlyaWNz"),
 ]
-
-//Probar codigo aqui
+let cancion1 = new Cancion("Bohemian Rhapsody", 1, "Rock", "Queen", "https://www.youtube.com/watch?v=yk3prd8GER4");
+/*cancion1.play();
+cancion1.estaReproduciendo();
+cancion1.stop();
+cancion1.estaReproduciendo();
+let borrados = canciones.splice(2,3);
+console.log(borrados);
+*/
+let lista = new ListaDeReproduccion(canciones);
+lista.pop(1);
+lista.push(new Cancion("Masked Dedede", 21, "Pop", "New Artist", "https://www.youtube.com/watch?v=example"));
+lista.get();
