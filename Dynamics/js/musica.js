@@ -143,12 +143,5 @@ canciones =
 ]
 
 let lista1 = new ListaDeReproduccion(canciones); // lista original
-
-let otrasCanciones =
-[
-  new Cancion("Song A", 21, "Pop", "Artista X", "https://..."),
-  new Cancion("Song B", 22, "Rock", "Artista Y", "https://...")
-];
-let lista2 = new ListaDeReproduccion(otrasCanciones); // Otra lista
-
-lista1.fusionar(lista2); // Fusiona lista2 en lista1
+lista1.shuffle(); // Mezclar la lista original
+lista1.get(); // Mostrar la lista mezclada
