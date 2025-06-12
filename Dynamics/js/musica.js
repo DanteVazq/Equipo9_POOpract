@@ -141,7 +141,53 @@ canciones =
   new Cancion("La Bachata", 19, "Bachata", "Manuel Turizo", "https://www.youtube.com/watch?v=nEd7mXPQ688&pp=ygURbGEgYmFjaGF0YSBseXJpY3M%3D"),
   new Cancion("Lamento Boliviano", 20, "Rock", "Los Enanitos Verdes", "https://www.youtube.com/watch?v=_dRsmc8vDN0&pp=ygUYbGFtZW50byBib2xpdmlhbm8gbHlyaWNz"),
 ]
+// Crear una nueva canción
+let nuevaCancion = new Cancion("Prueba", 21, "Pop", "Artista Prueba", "https://...");
 
-let lista1 = new ListaDeReproduccion(canciones); // lista original
-lista1.shuffle(); // Mezclar la lista original
-lista1.get(); // Mostrar la lista mezclada
+console.log("Probando getters iniciales:");
+nuevaCancion.getNombre();
+nuevaCancion.getId();
+nuevaCancion.getGenero();
+nuevaCancion.getArtista();
+nuevaCancion.getUrl();
+
+console.log("Probando setters:");
+nuevaCancion.setNombre("Nueva Prueba");
+nuevaCancion.setId(22);
+nuevaCancion.setGenero("Rock");
+nuevaCancion.setArtista("Nuevo Artista");
+nuevaCancion.setUrl("https://www.nuevourl.com");
+
+console.log("Probando estado de reproducción:");
+nuevaCancion.estaReproduciendo(); // false
+nuevaCancion.play();
+nuevaCancion.estaReproduciendo(); // true
+nuevaCancion.stop();
+nuevaCancion.estaReproduciendo(); // false
+
+console.log("Crear una lista de reproducción con las canciones");
+let lista1 = new ListaDeReproduccion(canciones);
+
+console.log("Agregar la canción a la lista");
+lista1.push(nuevaCancion);
+
+console.log("Eliminar la primera canción de la lista");
+lista1.pop(1);
+
+console.log("Obtener el tamaño de la lista");
+lista1.getSize();
+
+console.log("Mezclar la lista");
+lista1.shuffle();
+
+console.log("Mostrar la lista mezclada");
+lista1.get();
+
+console.log("Crear otra lista y fusionar");
+let cancionesExtra = [
+    new Cancion("Extra 1", 22, "Rock", "Artista Extra", "https://www.youtube.com/"),
+    new Cancion("Extra 2", 23, "Jazz", "Artista Extra 2", "https://www.youtube.com/")
+];
+let lista2 = new ListaDeReproduccion(cancionesExtra);
+
+lista1.fusionar(lista2);
