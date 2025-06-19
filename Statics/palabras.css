@@ -4,6 +4,9 @@
     
 
 }
+.boton{
+    display: block;
+}
 #contenedorbtn{
     background-color: rgb(168, 127, 235);
 }
