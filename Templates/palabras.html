@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Statics/palabras.css" rel="stylesheet">
     <title>Juego de palabras</title>
 </head>
 <body>
+    <h1>Juego de palabras</h1>
+    <div id="contenedor_all">
+        <div id="contenedorbtn">
+            <button id="contador-btn">Contador</button>
+            <button id="buscador-btn">Buscador</button>
+            <button id="acronimo-btn">Acronimo</button>
+        </div>
+        <div id="contenedor_dinamico">
+            <h3 id="encabezado_estatus">Contador</h3>
+            <form id="texto">
+                <label for="texto">Texto</label>
+                <input type="text" id="texto" name="texto" required>
+            </form>
+        </div>
+    </div>
     
 </body>
 </html>

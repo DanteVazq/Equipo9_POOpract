@@ -1,5 +1,6 @@
 #contenedor_all{
-    display: row wrap;
+    display: flex;
+    flex: row wrap;
     
 
 }
