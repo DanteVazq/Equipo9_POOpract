@@ -1,7 +1,7 @@
 #contenedor_all{
-    background-color: rgb(168, 127, 235);
-    display: row wrap;
-    flex
+    display: flex;
+    flex: row wrap;
+    
 
 }
 #contenedorbtn{
