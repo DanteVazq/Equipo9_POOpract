@@ -1,8 +1,3 @@
-let palabras_mas_largas;
-let arreglo_long_text;
-let palabraLarga;
-let acronimos=document.getElementById("boton_para_acronimos");
-let palabra_acronimo=document.getElementById("palabra_para_sacar_acronimo");
 //get de los botones para cambiar de modo
 let contadorBtn=document.getElementById("contador-btn");
 let buscadorBtn=document.getElementById("buscador-btn");
@@ -29,14 +24,27 @@ contadorBtn.addEventListener("click", ()=>{
     contContador.style.display = "block";
     contAcronimo.style.display = "none";
 });
+
+let text_busqueda=document.getElementById("texto-buscado");
+let boton_contador=document.getElementById("toca-aqui");
+//Variables para acrónimos
+let acronimos=document.getElementById("boton_para_acronimos");
+let palabra_acronimo=document.getElementById("palabra_para_sacar_acronimo");
+let caracteres_con_esp;
+let caracteres_sin_esp;
+let palabras;
+let palabras_mas_largas;
+let arreglo_long_text;
+let palabraLarga;
+
 //CONTADOR
-boton_busca.addEventListener("click", function(){
+boton_contador.addEventListener("click", function(){
     //Obtener texto con espacio 
     caracteres_con_esp=text_busqueda.value.length;
     //Obtener texto sin espacio
     arreglo_sin_esp=text_busqueda.value.split(" ");
     a=0;
-    for(i=0; i<=arreglo_sin_esp.length ; i++)
+    for(let i=0; i<arreglo_sin_esp.length ; i++)
     {
         a+=arreglo_sin_esp[i].length;
         arreglo_long_text.push(a);
@@ -50,6 +58,12 @@ boton_busca.addEventListener("click", function(){
 });
 //BUSCADOR
 //ACRONIMOS
-acronimos.addEventListener("click",function(){
-    
+acronimos.addEventListener("click",function(){ 
+    //Obtiene un arreglo de las frases
+    let arreglo_para_acronimo=acronimos.value.split(" ");
+    for(let a=0;a<arreglo_para_acronimo.length;a++)
+    {
+        let arreglo_acronimo=arreglo_para_acronimo[a].slice(0,1);
+    }
+   
 });
