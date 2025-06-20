@@ -24,11 +24,12 @@ contadorBtn.addEventListener("click", ()=>{
     contContador.style.display = "block";
     contAcronimo.style.display = "none";
 });
-
-let text_busqueda=document.getElementById("texto-buscado");
-let boton_contador=document.getElementById("contar-btn");
+//Inputs
+let text_busqueda=document.getElementById("texto_buscador");
+let boton_contador=document.getElementById("texto_contador");
+let acronimos=document.getElementById("texto_acronimo");
 //Variables para acrónimos
-let acronimos=document.getElementById("acronimo-btn");
+
 let palabra_acronimo=document.getElementById("palabra_para_sacar_acronimo");
 let caracteres_con_esp;
 let caracteres_sin_esp;
