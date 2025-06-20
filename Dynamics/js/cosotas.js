@@ -26,9 +26,9 @@ contadorBtn.addEventListener("click", ()=>{
 });
 
 let text_busqueda=document.getElementById("texto-buscado");
-let boton_contador=document.getElementById("toca-aqui");
+let boton_contador=document.getElementById("contar-btn");
 //Variables para acrónimos
-let acronimos=document.getElementById("boton_para_acronimos");
+let acronimos=document.getElementById("acronimo-btn");
 let palabra_acronimo=document.getElementById("palabra_para_sacar_acronimo");
 let caracteres_con_esp;
 let caracteres_sin_esp;
