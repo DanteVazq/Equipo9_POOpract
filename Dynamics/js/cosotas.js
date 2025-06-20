@@ -24,6 +24,7 @@ contadorBtn.addEventListener("click", ()=>{
     contContador.style.display = "block";
     contAcronimo.style.display = "none";
 });
+<<<<<<< HEAD
 //Variables para contador 
 let text_contador=document.getElementById("texto_contador");//El input 
 let boton_contador=document.getElementById("contar-btn");//Botones
@@ -31,6 +32,15 @@ let boton_contador=document.getElementById("contar-btn");//Botones
 let acronimos=document.getElementById("acronimo-btn");
 let palabra_acronimo=document.getElementById("texto_acronimo");
 //Variables sin sentido
+=======
+//Inputs
+let text_busqueda=document.getElementById("texto_buscador");
+let boton_contador=document.getElementById("texto_contador");
+let acronimos=document.getElementById("texto_acronimo");
+//Variables para acrónimos
+
+let palabra_acronimo=document.getElementById("palabra_para_sacar_acronimo");
+>>>>>>> bddde94c0bdef458eab6d8a9ae300cedf1c6a020
 let caracteres_con_esp;
 let caracteres_sin_esp;
 let palabras;
