@@ -38,7 +38,7 @@ let arreglo_long_text;
 let palabraLarga;
 
 //CONTADOR
-boton_contador.addEventListener("click", function(){
+boton_contador.addEventListener("submit", function(){
     //Obtener texto con espacio 
     caracteres_con_esp=text_busqueda.value.length;
     //Obtener texto sin espacio
@@ -58,7 +58,7 @@ boton_contador.addEventListener("click", function(){
 });
 //BUSCADOR
 //ACRONIMOS
-acronimos.addEventListener("click",function(){ 
+acronimos.addEventListener("submit",function(){ 
     //Obtiene un arreglo de las frases
     let arreglo_para_acronimo=acronimos.value.split(" ");
     for(let a=0;a<arreglo_para_acronimo.length;a++)
