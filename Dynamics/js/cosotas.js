@@ -24,12 +24,13 @@ contadorBtn.addEventListener("click", ()=>{
     contContador.style.display = "block";
     contAcronimo.style.display = "none";
 });
-
-let text_busqueda=document.getElementById("texto-buscado");
-let boton_contador=document.getElementById("contar-btn");
+//Variables para contador 
+let text_contador=document.getElementById("texto_contador");//El input 
+let boton_contador=document.getElementById("contar-btn");//Botones
 //Variables para acrónimos
 let acronimos=document.getElementById("acronimo-btn");
-let palabra_acronimo=document.getElementById("palabra_para_sacar_acronimo");
+let palabra_acronimo=document.getElementById("texto_acronimo");
+//Variables sin sentido
 let caracteres_con_esp;
 let caracteres_sin_esp;
 let palabras;
@@ -38,11 +39,14 @@ let arreglo_long_text;
 let palabraLarga;
 
 //CONTADOR
-boton_contador.addEventListener("submit", function(){
+boton_contador.addEventListener("submit", function(event){
+    event.preventDefault();
     //Obtener texto con espacio 
-    caracteres_con_esp=text_busqueda.value.length;
+    caracteres_con_esp=text_contador.value.length;
+    console.log(caracteres_con_esp);
+
     //Obtener texto sin espacio
-    arreglo_sin_esp=text_busqueda.value.split(" ");
+    arreglo_sin_esp=text_contador.value.split(" ");
     a=0;
     for(let i=0; i<arreglo_sin_esp.length ; i++)
     {
@@ -57,6 +61,7 @@ boton_contador.addEventListener("submit", function(){
     palabraLarga=arreglo_sin_esp[posicion];
 });
 //BUSCADOR
+
 //ACRONIMOS
 acronimos.addEventListener("submit",function(){ 
     //Obtiene un arreglo de las frases
